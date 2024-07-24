@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Table - Overview</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* Styling for the heading */
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 20px;
+            padding: 20px;
+            color: #fff;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Additional styling for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .controls {
+            text-align: center;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>SpryIQ Technologies Pvt LTD</h1> <!-- Updated heading text -->
+    
+    <div class="controls">
+        <!-- Search input -->
+        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for names..">
+        
+        <!-- Filter dropdowns -->
+        <select id="filterTechIndia" onchange="filterTable()">
+            <option value="">Filter Technologies in India</option>
+            <!-- Options will be added dynamically -->
+        </select>
+        <select id="filterTechUSA" onchange="filterTable()">
+            <option value="">Filter Technologies in the US</option>
+            <!-- Options will be added dynamically -->
+        </select>
+        <select id="filterAPAC" onchange="filterTable()">
+            <option value="">Filter Office in APAC</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        
+        <!-- Sorting dropdown -->
+        <select id="sortBy" onchange="sortTable()">
+            <option value="">Sort by</option>
+            <option value="0">Name</option>
+            <option value="1">Website</option>
+            <option value="2">Technologies in India</option>
+            <option value="3">Technologies in the US</option>
+            <option value="4">Office in APAC</option>
+        </select>
+    </div>
+    
+    <table id="companyTable">
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>WEBSITE</th>
+                <th>TECHNOLOGIES IN INDIA</th>
+                <th>TECHNOLOGIES IN THE US</th>
+                <th>OFFICE IN APAC</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Rows will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
